@@ -222,10 +222,11 @@ Users can list all created Monitors
 
 > The above command returns JSON structured like this on SUCCESS:
 
+
 ```json
 {
   "ok": true,
-  "message": [ {MONITOR}, {MONITOR} ] 
+  "message": [ {MONITOR}, {MONITOR} ]
 }
 ```
 
