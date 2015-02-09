@@ -136,7 +136,13 @@ Users can logout through this endpoint.
 
 ## Create Monitors (Basic Settings)
 
-> The above command returns JSON structured like this:
+Users create new Monitor from this point.
+
+### HTTP Request
+
+`POST /api2/monitors/new`
+
+> The above command returns JSON structured like this on SUCCESS:
 
 ```json
 {
@@ -146,15 +152,91 @@ Users can logout through this endpoint.
 }
 ```
 
-Users can login through this endpoint.
+> The above command returns JSON structured like this in case of any ERROR:
 
-### HTTP Request
-
-`POST /api2/monitors/new`
+```json
+{
+  "ok": false,
+  "message": "ERROR_MESSAGE"
+}
+```
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-username | | User email address which was used in signup
-password | | User's login password
+name | | domain address
+category | | category of the website
+wantsDesktop | | true/false
+wantsPhone | | true/false
+wantsTablet | | true/false
+mismatchRedirectUrl | NULL | default NULL
+dangerRedirectUrl | NULL | default NULL
+
+
+
+## Set Monitor Geo Locations
+
+Users Geo Locations to the respective Monitor
+
+`POST /api/monitors/new`
+
+> The above command returns JSON structured like this on SUCCESS:
+
+```json
+{
+    "ok": true,
+    "id": "MONITOR_ID",
+    "rev": "DOCUMENT_REVISION_HASH"
+}
+```
+
+> The above command returns JSON structured like this in case of any ERROR:
+
+```json
+{
+  "ok": false,
+  "message": "ERROR_MESSAGE"
+}
+```
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+name | | domain address
+category | | category of the website
+wantsDesktop | | true/false
+wantsPhone | | true/false
+wantsTablet | | true/false
+mismatchRedirectUrl | NULL | default NULL
+dangerRedirectUrl | NULL | default NULL
+
+
+
+## List All Monitors
+
+Users can list all created Monitors
+
+`GET /api/monitors`
+
+> The above command returns JSON structured like this on SUCCESS:
+
+```json
+{
+  "ok": true,
+  "message": [ {MONITOR}, {MONITOR} ] 
+}
+```
+
+> The above command returns JSON structured like this in case of any ERROR:
+
+```json
+{
+  "ok": false,
+  "message": "ERROR_MESSAGE"
+}
+```
+Parameter | Default | Description
+--------- | ------- | -----------
+NA        |NA        |NA
