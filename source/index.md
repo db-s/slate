@@ -58,7 +58,7 @@ You must replace `meowmeowmeow` with your personal API key.
 
 # Users
 
-## Create Users
+## Signup / Create Users
 
 > The above command returns JSON structured like this:
 
@@ -74,13 +74,13 @@ This endpoint creates a user.
 
 ### HTTP Request
 
-`POST http://example.com/signup`
+`POST /api2/signup`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-email | N/A | User email address which will also be used as the username
+email | | User email address which will also be used as the username
 firstName | | User's first name
 lastName | | User's last name
 phone | | User's phone number
@@ -89,3 +89,45 @@ password | | User's login password
 <aside class="success">
 By signing up, user will automatically accept the terms and conditions of xDForce and Bizzblizz
 </aside>
+
+## Login
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ok": true,
+    "message": "Login successful",
+    "target": "REDIRECTION_URL"
+}
+```
+
+Users can login through this endpoint.
+
+### HTTP Request
+
+`POST /api2/login`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+username | | User email address which was used in signup
+password | | User's login password
+
+## Logout
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ok": true,
+    "message": "You have successfully logged out"
+}
+```
+
+Users can logout through this endpoint.
+
+### HTTP Request
+
+`DELETE /api2/logout`
