@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: xDForce API Reference
 
 language_tabs:
   - shell
@@ -165,4 +165,3 @@ This endpoint retrieves a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the cat to retrieve
-
