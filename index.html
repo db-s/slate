@@ -204,8 +204,14 @@ By signing up, user will automatically accept the terms and conditions of xDForc
 
 <h2 id="create-monitors-(basic-settings)">Create Monitors (Basic Settings)</h2>
 
+<p>Users create new Monitor from this point.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api2/monitors/new</code></p>
+
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns JSON structured like this on SUCCESS:</p>
 </blockquote>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -214,11 +220,14 @@ By signing up, user will automatically accept the terms and conditions of xDForc
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Users can login through this endpoint.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">POST /api2/monitors/new</code></p>
+<blockquote>
+<p>The above command returns JSON structured like this in case of any ERROR:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR_MESSAGE"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -230,14 +239,148 @@ By signing up, user will automatically accept the terms and conditions of xDForc
 </tr>
 </thead><tbody>
 <tr>
-<td>username</td>
+<td>name</td>
 <td></td>
-<td>User email address which was used in signup</td>
+<td>domain address</td>
 </tr>
 <tr>
-<td>password</td>
+<td>category</td>
 <td></td>
-<td>User&rsquo;s login password</td>
+<td>category of the website</td>
+</tr>
+<tr>
+<td>wantsDesktop</td>
+<td></td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>wantsPhone</td>
+<td></td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>wantsTablet</td>
+<td></td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>mismatchRedirectUrl</td>
+<td>NULL</td>
+<td>default NULL</td>
+</tr>
+<tr>
+<td>dangerRedirectUrl</td>
+<td>NULL</td>
+<td>default NULL</td>
+</tr>
+</tbody></table>
+
+<h2 id="set-monitor-geo-locations">Set Monitor Geo Locations</h2>
+
+<p>Users Geo Locations to the respective Monitor</p>
+
+<p><code class="prettyprint">POST /api/monitors/new</code></p>
+
+<blockquote>
+<p>The above command returns JSON structured like this on SUCCESS:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MONITOR_ID"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOCUMENT_REVISION_HASH"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this in case of any ERROR:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR_MESSAGE"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td>domain address</td>
+</tr>
+<tr>
+<td>category</td>
+<td></td>
+<td>category of the website</td>
+</tr>
+<tr>
+<td>wantsDesktop</td>
+<td></td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>wantsPhone</td>
+<td></td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>wantsTablet</td>
+<td></td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>mismatchRedirectUrl</td>
+<td>NULL</td>
+<td>default NULL</td>
+</tr>
+<tr>
+<td>dangerRedirectUrl</td>
+<td>NULL</td>
+<td>default NULL</td>
+</tr>
+</tbody></table>
+
+<h2 id="list-all-monitors">List All Monitors</h2>
+
+<p>Users can list all created Monitors</p>
+
+<p><code class="prettyprint">GET /api/monitors</code></p>
+
+<blockquote>
+<p>The above command returns JSON structured like this on SUCCESS:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="err">MONITOR}</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="err">MONITOR}</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this in case of any ERROR:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR_MESSAGE"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
 </tr>
 </tbody></table>
 
