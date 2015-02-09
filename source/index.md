@@ -131,3 +131,30 @@ Users can logout through this endpoint.
 ### HTTP Request
 
 `DELETE /api2/logout`
+
+# Monitors
+
+## Create Monitors (Basic Settings)
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ok": true,
+    "id": "MONITOR_ID",
+    "rev": "DOCUMENT_REVISION_HASH"
+}
+```
+
+Users can login through this endpoint.
+
+### HTTP Request
+
+`POST /api2/monitors/new`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+username | | User email address which was used in signup
+password | | User's login password
