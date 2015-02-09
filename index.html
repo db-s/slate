@@ -200,6 +200,47 @@ By signing up, user will automatically accept the terms and conditions of xDForc
 
 <p><code class="prettyprint">DELETE /api2/logout</code></p>
 
+<h1 id="monitors">Monitors</h1>
+
+<h2 id="create-monitors-(basic-settings)">Create Monitors (Basic Settings)</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MONITOR_ID"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOCUMENT_REVISION_HASH"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Users can login through this endpoint.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api2/monitors/new</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td></td>
+<td>User email address which was used in signup</td>
+</tr>
+<tr>
+<td>password</td>
+<td></td>
+<td>User&rsquo;s login password</td>
+</tr>
+</tbody></table>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
