@@ -86,7 +86,7 @@ You must replace `meowmeowmeow` with your personal API key.
 
 <h1 id="users">Users</h1>
 
-<h2 id="create-users">Create Users</h2>
+<h2 id="signup-/-create-users">Signup / Create Users</h2>
 
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -102,7 +102,7 @@ You must replace `meowmeowmeow` with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://example.com/signup</code></p>
+<p><code class="prettyprint">POST /api2/signup</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -115,7 +115,7 @@ You must replace `meowmeowmeow` with your personal API key.
 </thead><tbody>
 <tr>
 <td>email</td>
-<td>N/A</td>
+<td></td>
 <td>User email address which will also be used as the username</td>
 </tr>
 <tr>
@@ -143,6 +143,62 @@ You must replace `meowmeowmeow` with your personal API key.
 <aside class="success">
 By signing up, user will automatically accept the terms and conditions of xDForce and Bizzblizz
 </aside>
+
+<h2 id="login">Login</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Login successful"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REDIRECTION_URL"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Users can login through this endpoint.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api2/login</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td></td>
+<td>User email address which was used in signup</td>
+</tr>
+<tr>
+<td>password</td>
+<td></td>
+<td>User&rsquo;s login password</td>
+</tr>
+</tbody></table>
+
+<h2 id="logout">Logout</h2>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You have successfully logged out"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Users can logout through this endpoint.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE /api2/logout</code></p>
 
           <h1 id="errors">Errors</h1>
 
